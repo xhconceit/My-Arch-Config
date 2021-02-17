@@ -440,7 +440,7 @@ google 翻译
 + 安装
 
 ```shell
-::sudo pacman -S usbmuxd libplist libimobiledevice
+sudo pacman -S usbmuxd libplist libimobiledevice
 yay -S ifuse
 sudo mkdir /mnt/iPhone	# 新建文件夹
 sudo chmod 777 /mnt/iPhone	# 修改文件夹权限
