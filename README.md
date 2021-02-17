@@ -14,13 +14,13 @@
 
 # 基本配置
 
-+ man	用户手册
-+ base-devel	sudo、编译器等等的基础工具
-+ neovim	编辑器
-
 ```shell
 pacman -S man base-devel neovim
 ```
+
++ man		用户手册
++ base-devel	sudo、编译器等等的基础工具
++ neovim	编辑器
 
 # 用户设置
 
@@ -28,18 +28,19 @@ pacman -S man base-devel neovim
 
 ```shell
 useradd -m -G wheel [name]	
-				# -m		创建家目录
-				# -G		用户所属的组
-				# [name]	用户名
-passwd [name]			# 修改密码
+# -m		创建家目录
+# -G		用户所属的组
+# [name]	用户名
+
+passwd [name]	# 修改密码
 ```
 
 + 修改普通用户权限
 
 ```shell
-nvim /etc/sudoers 
-			# 编辑sudoer file
-		    # 去掉 "%wheel ALL=(ALL) ALL" 前面的注释，保存退出
+nvim /etc/sudoers
+# 编辑sudoer file
+# 去掉 "%wheel ALL=(ALL) ALL" 前面的注释，保存退出
 ```
 
 # 图形界面配置
@@ -91,22 +92,22 @@ startx
 ```shell
 sudo pacman -S chromium ranger picom aria2 fzf scrot feh acpilight simplescreenrecorder pulseaudio pulseaudio-alsa alsa-utils unzip bashtop nerd-fonts-terminus
 
-chromium				# 浏览器
-ranger					# 终端文件管理器
-picom					# 窗口管理器
-aria2					# 下载
-fzf						# 搜索本地文件
-scrot					# 截图
-feh						# 图片查看软件
-acpilight				# 亮度管理器
+chromium		# 浏览器
+ranger			# 终端文件管理器
+picom			# 窗口管理器
+aria2			# 下载
+fzf			# 搜索本地文件
+scrot			# 截图
+feh			# 图片查看软件
+acpilight		# 亮度管理器
 simplescreenrecorder	# 录屏软件
-pulseaudio				# 录屏声音服务
-pulseaudio-alsa			# 录屏声音服务
-alsa-utils				# 调节音量
-alsamixer				# 调节音量大小
-unzip					# 解压 zip
-bashtop					# 资源监视器
-nerd-fonts-terminus		# 终端字体
+pulseaudio		# 录屏声音服务
+pulseaudio-alsa		# 录屏声音服务
+alsa-utils		# 调节音量
+alsamixer		# 调节音量大小
+unzip			# 解压 zip
+bashtop			# 资源监视器
+nerd-fonts-terminus	# 终端字体
 ```
 
 # `pacman` 换源
@@ -152,10 +153,13 @@ $ yay -S wqy-bitmapfont wqy-microhei wqy-microhei-lite wqy-zenhei adobe-source-h
 
 ```shell
 sudo pacman -S fcitx-im fcitx-configtool fcitx-rime
-fcitx-im			# fcitx
+
+fcitx-im		# fcitx
 fcitx-configtool	# fcitx 配置
-fcitx-rime			# rime
+fcitx-rime		# rime
+
 nvim ~/.xinxit		# 在最前面输入
+
 export XMODIFIERS="@im=fcitx"
 export GTK_IM_MODULE="fcitx"
 export QT_IM_MODULE="fcitx"
@@ -219,6 +223,7 @@ yarn config set registry https://registry.npm.taobao.org
 ```shell
 # yarn
 yarn global add ssr-helper
+
 # npm
 npm install -g ssr-helper
 ```
@@ -233,7 +238,7 @@ ssr config /home/noah/shadowsocksr						# 配置依赖
 + 安装 polipo 
 
 ```shell
-sudo pacman -Ss polipo		# socks 代理转 http 代理
+sudo pacman -Ss polipo			# socks 代理转 http 代理
 sudo vim /etc/polipo/config		# 添加以下配置
 
 socksParentProxy = "127.0.0.1:1080"
@@ -260,11 +265,13 @@ sudo pacman -S virtualbox	# 安装 virtualbox ，选择 virtualbox-host-modules-
 + 生成配置文件，在 ~/.config/ranger 文件夹下生成 rifle.conf commands.py commands_full.py rc.conf scope.sh
 
 ```shell
-ranger --copy-config=all	# rc.conf		选项设置和快捷键
-# commands.py		能通过 : 执行的命令
-# commands_full.py	全套命令
-# rifle.conf		指定不同类型的文件的默认打开程序。
-# scope.sh		用于指定预览程序的文件
+ranger --copy-config=all
+
+# rc.conf			选项设置和快捷键
+# commands.py			能通过 : 执行的命令
+# commands_full.py		全套命令
+# rifle.conf			指定不同类型的文件的默认打开程序。
+# scope.sh			用于指定预览程序的文件
 ```
 
 + 预览图片
@@ -280,6 +287,7 @@ set preview_images_method ueberzug
 
 ```shell
 $ sudo pacman -S ffmpegthumbnailer	# 安装预览视频缩略图应用，修改 scope.sh ，取消以下注销
+
 # video/*)
 Thumbnail
 ffmpegthumbnailer -i "${FILE_PATH}" -o "${IMAGE_CACHE_PATH}" -s 0 && exit 6
@@ -482,6 +490,3 @@ archlinux-java status			# 获取 jdk 列表
 archlinux-java get			# 获取当前 jdk 名字
 sudo archlinux-java set [jdk-name]	# 切换 jdk
 ```
-
-
-
