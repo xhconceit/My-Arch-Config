@@ -447,6 +447,15 @@ sudo chmod 777 /mnt/iPhone	# 修改文件夹权限
 ifuse	/mnt/iPhone
 ```
 
+# 挂载 Mac
+
++ 安装
+
+```shell
+yay -S apfs-fuse-git
+sudo apfs-fuse -o allow_other /dev/<device> <mount-path>
+```
+
 # 开发环境
 
 + golang
